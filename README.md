@@ -1,4 +1,4 @@
-# 🧩 Rubik-DL-Model
+# Rubik-DL-Model
 
 A modular Deep Learning framework for solving the **3×3 Rubik's Cube** using a stage-based approach inspired by the CFOP method.
 
