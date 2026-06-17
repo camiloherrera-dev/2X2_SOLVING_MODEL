@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from cube_net_print import print_net
 
-class cube:
+class Cube:
     def __init__(self, ndim=3):
         self.TOP = 0
         self.LEFT = 1
@@ -244,7 +243,123 @@ class cube:
         new_faces[4] = np.rot90(self.faces[4], k=1)
 
         self.faces = new_faces
+
+    def move_m(self):
+        new_faces = [np.copy(f) for f in self.faces]
+        n = self.ndim
+        c = n//2
+
+        top = self.faces[0][:, c].copy()
+        front = self.faces[2][:, c].copy()
+        down = self.faces[4][:, c].copy()
+        back = self.faces[5][:, c].copy()
+
+        new_faces[5][:, c] = top[::-1]
+        new_faces[2][:, c] = down
+        new_faces[0][:, c] = front
+        new_faces[4][:, c] = back[::-1]
+
+        self.faces = new_faces
+
+
+    def move_m_inv(self):
+        new_faces = [np.copy(f) for f in self.faces]
+        n = self.ndim
+        c = n//2
+
+        top = self.faces[0][:, c].copy()
+        front = self.faces[2][:, c].copy()
+        down = self.faces[4][:, c].copy()
+        back = self.faces[5][:, c].copy()
+
+        new_faces[0][:, c] = back[::-1]
+        new_faces[2][:, c] = top
+        new_faces[4][:, c] = front
+        new_faces[5][:, c] = down[::-1]
+
+        self.faces = new_faces
+
+    def move_x(self):
+      new_faces = [np.copy(f) for f in self.faces]
+      n = self.ndim
+      
+      top = self.faces[0]
+      left = self.faces[1]
+      front = self.faces[2]
+      right = self.faces[3]
+      down = self.faces[4]
+      back = self.faces[5]
+      
+      new_faces[0] = front
+      new_faces[1] = np.rot90(left, k=1)
+      new_faces[2] = down
+      new_faces[3] = np.rot90(right, k=-1)
+      new_faces[4] = back[::-1, ::-1]
+      new_faces[5] = top[::-1, ::-1]
+      
+      self.faces = new_faces
     
+    def move_x_inv(self):
+      new_faces = [np.copy(f) for f in self.faces]
+      n = self.ndim
+      
+      top = self.faces[0]
+      left = self.faces[1]
+      front = self.faces[2]
+      right = self.faces[3]
+      down = self.faces[4]
+      back = self.faces[5]
+      
+      new_faces[0] = back[::-1, ::-1]
+      new_faces[1] = np.rot90(left, k=-1)
+      new_faces[2] = top
+      new_faces[3] = np.rot90(right, k=1)
+      new_faces[4] = front
+      new_faces[5] = down[::-1, ::-1]
+      
+      self.faces = new_faces
+    
+    def move_y(self):
+      new_faces = [np.copy(f) for f in self.faces]
+      n = self.ndim
+      
+      top = self.faces[0]
+      left = self.faces[1]
+      front = self.faces[2]
+      right = self.faces[3]
+      down = self.faces[4]
+      back = self.faces[5]
+      
+      new_faces[0] = np.rot90(top, k=-1)
+      new_faces[1] = front
+      new_faces[2] = right
+      new_faces[3] = back
+      new_faces[4] = np.rot90(down, k=1)
+      new_faces[5] = left
+      
+      self.faces = new_faces    
+    
+    def move_y_inv(self):
+      new_faces = [np.copy(f) for f in self.faces]
+      n = self.ndim
+      
+      top = self.faces[0]
+      left = self.faces[1]
+      front = self.faces[2]
+      right = self.faces[3]
+      down = self.faces[4]
+      back = self.faces[5]
+      
+      new_faces[0] = np.rot90(top, k=1)
+      new_faces[1] = back
+      new_faces[2] = left
+      new_faces[3] = front
+      new_faces[4] = np.rot90(down, k=-1)
+      new_faces[5] = right
+      
+      self.faces = new_faces
+      
+      
     def to_one_hot(self):
         vector = []
         
@@ -306,17 +421,16 @@ class cube:
         for idx in lateral_faces:
             face = self.faces[idx]
             center_color = int(face[c, c])
-            lower_half = np.concatenate(face[1, :])
-            if np.mean(lower_half) != center_color:
+            lower_half = face[c, :]
+            if not np.all(lower_half == center_color):
                 return False
             
         down = self.faces[4]
         down_color = int(down[c, c])
-        for i in range(n):
-            if not all (down[i, :] == down_color):
-                return False
+        if not np.all(down == down_color):
+            return False
         
-        return True
+        return True and self.is_cross_solved()
     
     def is_oll_cross_solved(self): #ESTO ES PARA EL FRIDRICH REDUCIDO
         n = self.ndim
@@ -329,7 +443,7 @@ class cube:
         if not all(int(cell) == top_color for cell in cross_cells):
             return False
         
-        return True
+        return True and self.is_f2l_solved
     
     
     def is_oll_solved(self):
@@ -339,16 +453,16 @@ class cube:
         top = self.faces[0]
         top_color = int(top[c, c])
         
-        if not all(top == top_color):
+        if not np.all(top == top_color):
             return False
         
-        return True
+        return True and self.is_f2l_solved
     
     def is_solved(self):
         for face in self.faces:
             if not np.all(face == face[0,0]):
                 return False
-        return True
+        return True and self.is_oll_solved
     
     def distance(self):
         dist = 0
@@ -358,16 +472,6 @@ class cube:
             dist += np.sum(face != center_color)
         
         return dist
-    
-    def print_cube(self):
-        faces_list = [face.tolist() for face in self.faces]
-        print_net(faces_list)
-        print('\n')
-        
-    def step_print(self, step):
-        faces_list = [face.tolist() for face in self.faces]
-        print_net(faces_list, step=step)
-        print('\n')
         
     def plt_faces(self, step=0, move=""):
         titles = ["Top", "Left", "Front", "Right", "Down", "Back"]

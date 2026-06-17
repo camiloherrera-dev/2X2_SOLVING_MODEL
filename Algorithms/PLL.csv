@@ -1,0 +1,22 @@
+name,algorithm
+PLL_Aa,x L L D D L_inv U_inv L D D L_inv U L_inv
+PLL_Ab,x_inv L L D D L U L_inv D D L U_inv L
+PLL_E,"x_inv L_inv U L D_inv L_inv U_inv L D L_inv U_inv L D_inv L_inv U L D"
+PLL_F,"R_inv U_inv F_inv R U R_inv U_inv R_inv F R R U_inv R_inv U_inv R U R_inv U R"
+PLL_Ga,"R R U R_inv U R_inv U_inv R U_inv R R U_inv D R_inv U R D_inv"
+PLL_Gb,R_inv U_inv R U D_inv R R U R_inv U R U_inv R U_inv R R D
+PLL_Gc,R R U_inv R U_inv R U R_inv U R R U D_inv R U_inv R_inv D
+PLL_Gd,"R U R_inv U_inv D R R U_inv R U_inv R_inv U R_inv U R R D_inv"
+PLL_H,"M M U M M U U M M U M M"
+PLL_Ja,"x R R F R F_inv R U U M_inv R_inv U M R U U"
+PLL_Jb,"R U R_inv F_inv R U R_inv U_inv R_inv F R R U_inv R_inv"
+PLL_Na,"R U R_inv U R U R_inv F_inv R U R_inv U_inv R_inv F R R U_inv R_inv U U R U_inv R_inv"
+PLL_Nb,"R_inv U R U_inv R_inv F_inv U_inv F R U R_inv F R_inv F_inv R U_inv R"
+PLL_Ra,"R U_inv R_inv U_inv R U R D R_inv U_inv R D_inv R_inv U U R_inv"
+PLL_Rb,"R R F R U R U_inv R_inv F_inv R U U R_inv U U R"
+PLL_T,"R U R_inv U_inv R_inv F R R U_inv R_inv U_inv R U R_inv F_inv"
+PLL_Ua,M M U M U U M_inv U M M
+PLL_Ub,"M M U_inv M U U M_inv U_inv M M"
+PLL_V,"R_inv U R_inv U_inv y R_inv F_inv R R U_inv R_inv U R_inv F R F"
+PLL_Y,"F R U_inv R_inv U_inv R U R_inv F_inv R U R_inv U_inv R_inv F R F_inv"
+PLL_Z,"M_inv U M M U M M U M_inv U U M M"

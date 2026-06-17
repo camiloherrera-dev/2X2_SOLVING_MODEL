@@ -1,0 +1,58 @@
+name,algorithm
+OLL_1,R U R_inv U_inv R U_inv R_inv F_inv U_inv F R U R_inv
+OLL_2,F R_inv F R R U_inv R_inv U_inv R U R_inv F F
+OLL_3,R U R_inv U R U U R_inv F R U R_inv U_inv F_inv
+OLL_4,R_inv U_inv R U_inv R_inv U U R F R U R_inv U_inv F_inv
+OLL_5,"L F_inv L_inv U_inv L U F U_inv L_inv"
+OLL_6,"R_inv F R U R_inv U_inv F_inv U R"
+OLL_7,"R U R R U_inv R_inv F R U R U_inv F_inv"
+OLL_8,"R_inv U_inv R_inv F R F_inv U R"
+OLL_9,"M R U R_inv U_inv M_inv R_inv R U R U_inv R_inv"
+OLL_10,R U R_inv U_inv M_inv U R U_inv M_inv R_inv
+OLL_11,"R U U R_inv U_inv R U R_inv U_inv R U_inv R_inv"
+OLL_12,"R U U R R U_inv R R U_inv R R U U R"
+OLL_13,"R R D_inv R U U R_inv D R U U R"
+OLL_14,"M R U R_inv U_inv M_inv R_inv F R F_inv"
+OLL_15,F_inv M R U R_inv U_inv M_inv R_inv F R
+OLL_16,"R U U R_inv U_inv R U_inv R_inv"
+OLL_17,"R U R_inv U R U U R_inv"
+OLL_18,"R U U R R F R F_inv U U R_inv F R F_inv"
+OLL_19,"M R U M_inv R_inv U U M R U U R_inv U U R U_inv M_inv R_inv"
+OLL_20,M_inv R_inv R R U R_inv U M R U U M_inv R_inv U M_inv
+OLL_21,M U_inv M R U U M_inv R_inv U_inv R U_inv R_inv M_inv
+OLL_22,"F R_inv F_inv R R M_inv R_inv U R U_inv R_inv U_inv M_inv"
+OLL_23,"M R U R_inv U R U U R M R M U_inv R U_inv R_inv U U M R"
+OLL_24,"M_inv R_inv R U R U R_inv U_inv M_inv R_inv F R F_inv"
+OLL_25,"M R U R_inv U_inv M M U R U_inv R_inv U_inv M_inv"
+OLL_26,"R U R_inv U_inv R_inv F R R U R_inv U_inv F_inv"
+OLL_27,"R U R_inv U R_inv F R F_inv R U U R_inv"
+OLL_28,"R U U R R F R F_inv R U U R_inv"
+OLL_29,"F R_inv F_inv R U R U_inv R_inv"
+OLL_30,"F U R U_inv R_inv U R U_inv R_inv F_inv"
+OLL_31,"R U R_inv U R U_inv B U_inv B_inv R_inv"
+OLL_32,"R_inv F R U R U_inv R R F_inv R R U_inv R_inv U R U R_inv"
+OLL_33,"M_inv R_inv U_inv M R U_inv R_inv U R U_inv R_inv U R M_inv R_inv U M R"
+OLL_34,"F U R U_inv R R F_inv R U R U_inv R_inv"
+OLL_35,"R_inv F R U R_inv F_inv R F U_inv F_inv"
+OLL_36,"M L_inv U_inv M_inv L L_inv U_inv L U M L_inv U M_inv L"
+OLL_37,"M R U M_inv R_inv R U R_inv U_inv M R U_inv M_inv R_inv"
+OLL_38,"R_inv U_inv F U R U_inv R_inv F_inv R"
+OLL_39,"L U F_inv U_inv L_inv U L F L_inv"
+OLL_40,F_inv U_inv L_inv U L F
+OLL_41,"F U R U_inv R_inv F_inv"
+OLL_42,"R_inv U_inv R_inv F R F_inv R_inv F R F_inv U R"
+OLL_43,"F R U R_inv U_inv R U R_inv U_inv F_inv"
+OLL_44,"M R U_inv R M R M U R M R M U R M R M U_inv M R"
+OLL_45,"M_inv R_inv U R M R M U_inv R M R M U_inv R M R M U M_inv R_inv"
+OLL_46,"M L_inv U U L U L_inv U_inv L U L_inv U M_inv L"
+OLL_47,"M R U U R_inv U_inv R U R_inv U_inv R U_inv M_inv R_inv"
+OLL_48,"M R U R_inv U R U U M_inv R_inv"
+OLL_49,"M L_inv U_inv L U_inv L_inv U U M_inv L"
+OLL_50,"M R U R_inv U R_inv F R F_inv R U U M_inv R_inv"
+OLL_51,"M_inv R_inv U_inv R U_inv R_inv U U R U_inv R M_inv R_inv"
+OLL_52,"M L_inv U U L U L_inv U M_inv L"
+OLL_53,"M R U U R_inv U_inv R U_inv M_inv R_inv"
+OLL_54,"R U R_inv U_inv R_inv F R F_inv"
+OLL_55,"F R U R_inv U_inv F_inv"
+OLL_56,"L_inv U_inv L U_inv L_inv U L U L F_inv L_inv F"
+OLL_57,"R U R_inv U R U_inv R_inv U_inv R_inv F R F_inv"
